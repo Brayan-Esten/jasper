@@ -1,0 +1,127 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="employee_report" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="abeb55f7-7664-4382-acf7-0537f89142ae">
+    <style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <dataset name="employeeDataset" uuid="dcdec434-91cc-40ea-8cb1-f8d12b322f15">
+        <query language="sql"><![CDATA[]]></query>
+        <field name="id" class="java.lang.Long"/>
+        <field name="name" class="java.lang.String"/>
+        <field name="department" class="java.lang.String"/>
+        <field name="salary" class="java.math.BigDecimal"/>
+        <field name="joinedDate" class="java.util.Date"/>
+    </dataset>
+    <parameter name="employeeDataset" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    <query language="sql"><![CDATA[]]></query>
+    <title height="80" splitType="Stretch">
+        <element kind="staticText" uuid="a1431478-be4b-4abd-a944-c51d4e1968fe" x="0" y="0" width="210" height="60" fontSize="22.0" hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Employee Report]]></text>
+        </element>
+    </title>
+    <detail>
+        <band height="318" splitType="Stretch">
+            <element kind="component" uuid="dfa8ed3d-3586-4800-a3a8-503a253f23c3" x="0" y="0" width="529" height="200">
+                <component kind="table">
+                    <datasetRun uuid="1ec0f8cb-8b39-4b57-b6c7-77f92ffb953d" subDataset="employeeDataset">
+                        <dataSourceExpression><![CDATA[$P{employeeDataset}]]></dataSourceExpression>
+                    </datasetRun>
+                    <column kind="single" uuid="2643b1da-921c-4f9d-929c-12801b6ec850" width="40">
+                        <columnHeader height="30" rowSpan="1" style="Table_CH">
+                            <element kind="staticText" uuid="8766e155-2968-45e0-90e0-5fe67552451f" x="0" y="0" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <text><![CDATA[ID]]></text>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="30" style="Table_TD">
+                            <element kind="textField" uuid="a6be0dce-7b70-487d-8301-80aba22dd97b" x="0" y="0" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <expression><![CDATA[$F{id}]]></expression>
+                            </element>
+                        </detailCell>
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+                    </column>
+                    <column kind="single" uuid="aa855068-412b-4c56-893c-e381b9f71e0e" width="120">
+                        <columnHeader height="30" rowSpan="1" style="Table_CH">
+                            <element kind="staticText" uuid="cb7bb03b-be95-42dc-a84c-69725959fea4" x="0" y="0" width="120" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <text><![CDATA[Name]]></text>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="30" style="Table_TD">
+                            <element kind="textField" uuid="5ac4d756-9192-48c2-9f5f-f6f521b2a15a" x="0" y="0" width="120" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <expression><![CDATA[$F{name}]]></expression>
+                            </element>
+                        </detailCell>
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+                    </column>
+                    <column kind="single" uuid="7d5e1499-85aa-4ace-8345-d4ee10be2e53" width="100">
+                        <columnHeader height="30" rowSpan="1" style="Table_CH">
+                            <element kind="staticText" uuid="e5cc8b7b-bc67-43f7-a0fe-573aa9d9e13f" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <text><![CDATA[Department]]></text>
+                                <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="30" style="Table_TD">
+                            <element kind="textField" uuid="2d8a020d-c188-4162-a6ee-af50bfc9fba4" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <expression><![CDATA[$F{department}]]></expression>
+                            </element>
+                        </detailCell>
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+                    </column>
+                    <column kind="single" uuid="62b13dd1-66ec-4fe4-a67e-5142aa8b39a0" width="140">
+                        <columnHeader height="30" rowSpan="1" style="Table_CH">
+                            <element kind="staticText" uuid="6584dcd6-1d87-4e8b-8d77-59b7eb991ff3" x="0" y="0" width="140" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <text><![CDATA[Salary]]></text>
+                                <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="30" style="Table_TD">
+                            <element kind="textField" uuid="ca48e2fc-9363-469c-86dd-bfadd040a13c" x="0" y="0" width="140" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <expression><![CDATA[$F{salary}]]></expression>
+                            </element>
+                        </detailCell>
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+                    </column>
+                    <column kind="single" uuid="1e4ad79e-118f-40f1-8ede-314b02371723" width="100">
+                        <columnHeader height="30" rowSpan="1" style="Table_CH">
+                            <element kind="staticText" uuid="b0320f94-18d3-4494-aa93-c0f7055ebfbf" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <text><![CDATA[Joined Date]]></text>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="30" style="Table_TD">
+                            <element kind="textField" uuid="1cb47017-4a89-4518-a815-87ca776b5b1e" x="0" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+                                <expression><![CDATA[$F{joinedDate}]]></expression>
+                            </element>
+                        </detailCell>
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+                    </column>
+                </component>
+                <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+                <property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+                <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+                <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+            </element>
+        </band>
+    </detail>
+</jasperReport>
